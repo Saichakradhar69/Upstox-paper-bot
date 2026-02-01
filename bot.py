@@ -74,10 +74,10 @@ def main():
     #     return
 
     if not is_market_open_ist():
-    state = load_state()
-    state["last_price"] = "MARKET_CLOSED"
-    save_state(state)
-    return
+        state = load_state()
+        state["last_price"] = "MARKET_CLOSED"
+        save_state(state)
+        return
 
 
     state = load_state()
