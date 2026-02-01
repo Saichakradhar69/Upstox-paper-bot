@@ -5,6 +5,17 @@ from zoneinfo import ZoneInfo
 
 STATE_FILE = "state.json"
 
+def send_telegram(text: str):
+    token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
+    chat_id = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
+    if not token or not chat_id:
+        return  # silently skip if not configured
+
+    url = f"https://api.telegram.org/bot{token}/sendMessage"
+    payload = {"chat_id": chat_id, "text": text}
+    requests.post(url, data=payload, timeout=20)
+
+
 def load_state():
     with open(STATE_FILE, "r") as f:
         return json.load(f)
