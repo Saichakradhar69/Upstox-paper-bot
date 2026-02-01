@@ -70,8 +70,15 @@ def main():
     key = os.environ["UPSTOX_INSTRUMENT_KEY"].strip()
 
     # Only trade during NSE hours (IST)
+    # if not is_market_open_ist():
+    #     return
+
     if not is_market_open_ist():
-        return
+    state = load_state()
+    state["last_price"] = "MARKET_CLOSED"
+    save_state(state)
+    return
+
 
     state = load_state()
     ltp = fetch_ltp(token, key)
