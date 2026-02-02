@@ -1,4 +1,4 @@
-name: Paper trading tick (5 min)
+name: Paper trading tick (5 min) v2
 
 on:
   schedule:
