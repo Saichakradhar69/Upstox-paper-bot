@@ -3,6 +3,8 @@
   "qty": 0,
   "avg_price": 0.0,
   "realized_pnl": 0.0,
-  "last_price": null,
-  "prices": []
+  "last_price": 25777.85,
+  "prices": [
+    25777.85
+  ]
 }
