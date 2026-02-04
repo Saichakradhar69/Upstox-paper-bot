@@ -3,6 +3,6 @@
   "qty": 0,
   "avg_price": 0.0,
   "realized_pnl": 0.0,
-  "last_price": "MARKET_CLOSED",
+  "last_price": null,
   "prices": []
 }
